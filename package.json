@@ -1,0 +1,24 @@
+{
+  "name": "motus",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "create-db": "ts-node db.ts",
+    "extract-lemmes": "ts-node lexicon-extractor.ts ./lexicon/fr/lemmes.tsv lemme",
+    "extract-words": "ts-node lexicon-extractor.ts ./lexicon/fr/words.tsv word"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.21",
+    "lodash": "^4.17.21",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.179",
+    "@types/sqlite3": "^3.1.8",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2"
+  },
+  "engines": {
+    "node": ">= 14.17.3"
+  }
+}
