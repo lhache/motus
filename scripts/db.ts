@@ -9,6 +9,20 @@ function createTables(newdb: Database) {
         CREATE TABLE IF NOT EXISTS word (
             word TEXT PRIMARY KEY NOT NULL
         );
+
+        CREATE TABLE IF NOT EXISTS daily (
+            date TEXT PRIMARY KEY NOT NULL,
+            word TEXT NOT NULL,
+            success BOOLEAN,
+            words STRING
+        );
+        CREATE TABLE IF NOT EXISTS sprint (
+            date TEXT PRIMARY KEY NOT NULL,
+            words TEXT NOT NULL,
+            score INTEGER,
+            wordsInProgress STRING,
+            timeLeftInSeconds INTEGER
+        );
     `);
 }
 

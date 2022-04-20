@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "create-db": "ts-node db.ts",
-    "extract-lemmes": "ts-node lexicon-extractor.ts ./lexicon/fr/lemmes.tsv lemme",
-    "extract-words": "ts-node lexicon-extractor.ts ./lexicon/fr/words.tsv word"
+    "all": "npm run create-db & npm run lemmes  & npm run words  ",
+    "create-db": "ts-node ./scripts/db.ts",
+    "lemmes": "ts-node ./scripts/lemmes-extractor.ts ./lexicon/fr/lemmes.tsv lemme",
+    "words": "ts-node ./scripts/words-extractor.ts ./lexicon/fr/words.tsv word",
+    "daily": "ts-node ./scripts/daily.ts",
+    "sprint": "ts-node ./scripts/sprint.ts",
+    "sprint-words": "ts-node ./scripts/sprint-words.ts"
   },
   "dependencies": {
     "@types/node": "^17.0.21",
