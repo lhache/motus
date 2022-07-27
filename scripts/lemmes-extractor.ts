@@ -31,12 +31,12 @@ const cleanupWord = (word: string) => word.normalize('NFKD').replace(/[^\w]/g, '
     finalLexicon = uniq(finalLexicon)
 
     // open the database
-    const db = new sqlite3.Database('./motus.db', sqlite3.OPEN_READWRITE, (err) => {
+    const db = new sqlite3.Database('./motamot.db', sqlite3.OPEN_READWRITE, (err) => {
       if (err) {
         console.log(err)
         return;
       } 
-      console.log('Connected to the motus database.');
+      console.log('Connected to the motamot database.');
       finalLexicon.map((word: string) => {
         if (wordIsValid(word)) {
           

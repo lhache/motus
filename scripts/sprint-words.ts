@@ -18,12 +18,12 @@ import sqlite3  from 'sqlite3'
   try {
 
     // open the database
-    const db = new sqlite3.Database('./motus.db', sqlite3.OPEN_READWRITE, (err) => {
+    const db = new sqlite3.Database('./motamot.db', sqlite3.OPEN_READWRITE, (err) => {
       if (err) {
         console.log(err)
         return;
       } 
-      console.log('Connected to the motus database.');
+      console.log('Connected to the motamot database.');
       const query = `select lemme from lemme order by random() limit 10;`
 
       let valueString = '('

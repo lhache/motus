@@ -1,5 +1,5 @@
 {
-  "name": "motus",
+  "name": "motamot",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "words": "ts-node ./scripts/words-extractor.ts ./lexicon/fr/words.tsv word",
     "daily": "ts-node ./scripts/daily.ts",
     "sprint": "ts-node ./scripts/sprint.ts",
+    "sprint-free": "ts-node ./scripts/sprint-free.ts",
     "sprint-words": "ts-node ./scripts/sprint-words.ts"
   },
   "dependencies": {

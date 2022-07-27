@@ -1,2 +1,2 @@
-# motus
-motus-like game
+# motamot
+motamot-like game

@@ -19,25 +19,16 @@ const chainValuesFromDate = (dateFrom: Date, items: string[]): string => {
   try {
 
     // open the database
-    const db = new sqlite3.Database('./motus.db', sqlite3.OPEN_READWRITE, (err) => {
+    const db = new sqlite3.Database('./motamot.db', sqlite3.OPEN_READWRITE, (err) => {
       if (err) {
         console.log(err)
         return;
       } 
-      console.log('Connected to the motus database.');
+      console.log('Connected to the motamot database.');
       
       const query = `INSERT INTO daily (date, word) VALUES ${chainValuesFromDate(new Date(), words)};`
       db.exec(query);
-      // dataset.map(({date, word}: {date:string, word:string}) => {
-          
-      //     db.exec(`
-      //         INSERT INTO daily (date, word) VALUES ("${date}", "${word}");
-      //     `, () => {
-      //       console.log(`
-      //       INSERT INTO daily (date, word) VALUES ("${date}", "${word}");
-      //   `)
-      //     });
-      // })
+
     });
     // db.close();
   }

@@ -19,12 +19,12 @@ import { sprintDataset } from './sprint-dataset';
   try {
 
     // open the database
-    const db = new sqlite3.Database('./motus.db', sqlite3.OPEN_READWRITE, (err) => {
+    const db = new sqlite3.Database('./motamot.db', sqlite3.OPEN_READWRITE, (err) => {
       if (err) {
         console.log(err)
         return;
       } 
-      console.log('Connected to the motus database.');
+      console.log('Connected to the motamot database.');
       const query = `INSERT INTO sprint (date, words) VALUES ${chainValuesFromDate(new Date(), sprintDataset)};`
       // console.log(query)
       db.exec(query);

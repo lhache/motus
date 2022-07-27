@@ -5,19 +5,27 @@ function createTables(newdb: Database) {
         CREATE TABLE IF NOT EXISTS lemme (
             lemme TEXT PRIMARY KEY NOT NULL
         );
-
         CREATE TABLE IF NOT EXISTS word (
             word TEXT PRIMARY KEY NOT NULL
         );
-
         CREATE TABLE IF NOT EXISTS daily (
-            date TEXT PRIMARY KEY NOT NULL,
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            date TEXT UNIQUE NOT NULL,
             word TEXT NOT NULL,
             success BOOLEAN,
             words STRING
         );
         CREATE TABLE IF NOT EXISTS sprint (
-            date TEXT PRIMARY KEY NOT NULL,
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            date TEXT UNIQUE NOT NULL,
+            words TEXT NOT NULL,
+            score INTEGER,
+            wordsInProgress STRING,
+            timeLeftInSeconds INTEGER
+        );
+        CREATE TABLE IF NOT EXISTS sprint_free (
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            date TEXT,
             words TEXT NOT NULL,
             score INTEGER,
             wordsInProgress STRING,
@@ -27,7 +35,7 @@ function createTables(newdb: Database) {
 }
 
 function createDatabase() {
-  var newdb = new sqlite3.Database('motus.db', (err) => {
+  var newdb = new sqlite3.Database('motamot.db', (err) => {
       if (err) {
           console.log("Getting error " + err);
       }
